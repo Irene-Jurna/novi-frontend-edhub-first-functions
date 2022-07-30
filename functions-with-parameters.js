@@ -5,7 +5,7 @@
 // add(2, 5) geeft 7
 
 function add(a, b) {
-  return a + b;
+    return a + b;
 }
 
 const result = add(1, 4);
@@ -17,7 +17,17 @@ console.log(result);
 // greeter("Jan") geeft "Hoi Jan!"
 // greeter("Kees") geeft "Hoi Kees!"
 
+function greeter(name, greet) {
+    return `${greet} ${name}!`
+}
 
+const greeting = greeter("Nova", "Hallo");
+console.log(greeting);
+
+//Manier 2: arrow-function
+
+const greeter2 = (name2, greet2) => `${greet2} ${name2}!`;
+console.log(greeter2("Elwyn", "Hoi"));
 
 /* Opdracht 2 */
 // Schrijf een functie genaamd minutesToSeconds, die een hoeveelheid minuten verwacht (als een getal) en teruggeeft hoeveel seconden dat zijn.
@@ -26,7 +36,18 @@ console.log(result);
 // minutesToSeconds(3) geeft 180
 // minutesToSeconds(23) geeft 1380
 
+function minutesToSeconds(minutes) {
+    return minutes * 60;
+}
 
+const seconds = minutesToSeconds(23);
+console.log(seconds);
+
+//Manier 2: arrow-function
+
+const minutesToSeconds2 = (minute) => minute * 60;
+const seconds2 = minutesToSeconds2(3);
+console.log(seconds2);
 
 /* Opdracht 3 */
 // Schrijf een functie genaamd merge, die twee strings verwacht en deze aan elkaar geplakt teruggeeft.
@@ -35,8 +56,18 @@ console.log(result);
 // merge("abra", "cadabra") geeft "abracadabra"
 // merge("zoet", "sappig") geeft "zoetsappig"
 
+function merge(string1, string2) {
+    return string1 + string2;
+}
 
+const mergeWords = merge("abra", "cadabra");
+console.log(mergeWords);
 
+// Manier 2: arrow-function
+
+const merge2 = (firstString, secondString) => firstString + secondString;
+const mergeWords2 = merge2("zoet", "sappig");
+console.log(mergeWords2);
 
 /* Opdracht  4 */
 // Schrijf een functie genaamd calculateDogYears die de hondenleeftijd verwacht en dit omrekent naar mensenjaren (1 tot 7). Op basis daarvan wordt een zinnetje teruggegeven.
@@ -44,7 +75,18 @@ console.log(result);
 // calculateDogYears(6) geeft "Jouw hond is 42 jaar oud in mensenjaren."
 // calculateDogYears(2) geeft "Jouw hond is 14 jaar oud in mensenjaren."
 
+function calculateDogYears(dogAge) {
+    return dogAge * 7;
+}
 
+const dogYearsInHumanYears = calculateDogYears(2);
+console.log(`Jouw hond is ${dogYearsInHumanYears} jaar oud in mensenjaren.`);
+
+//Manier 2: arrow-function
+
+const dogYears = (dogAge2) => dogAge2 * 7;
+const dogYearsInHumanYears2 = dogYears(6);
+console.log(`Jouw hond is ${dogYearsInHumanYears2} jaar oud in mensenjaren.`);
 
 /* Opdracht 5 */
 // Schrijf een functie genaamd wrapper, die twee parameters verwacht: een woord en een karakter
@@ -54,7 +96,20 @@ console.log(result);
 // wrapper("beep", "_") geeft "_beep_"
 // wrapper("kaas", "Q") geeft "QkaasQ"
 
+function wrapper(word, character) {
+    return character + word + character;
+}
 
+const wrappedWord = wrapper("bril", "*");
+console.log(wrappedWord);
+
+// Manier 2: arrow-function
+
+const wrapper2 = (word2, character2) => `${character2}${word2}${character2}`;
+let wrappedWord2 = wrapper2("beep", "_");
+console.log(wrappedWord2);
+wrappedWord2 = wrapper2("kaas", "Q");
+console.log(wrappedWord2);
 
 /* Bonus opdracht  */
 // Schrijf een functie genaamd createDetailString, die een object met de properties firstName, lastName en profession verwacht en een zin teruggeeft
@@ -62,4 +117,21 @@ console.log(result);
 // createDetailString({ firstName: 'Jan', lastName: 'Jansen', profession: 'docent'}) geeft "Het beroep vam Jan Jansen is docent."
 // createDetailString({ firstName: 'Kees', lastName: 'Klaasen', profession: 'brandweerman'}) geeft "Het beroep vam Kees Klaasen is brandweerman."
 
+function createDetailString(object) {
+    return `Het beroep van ${object.firstName} is ${object.profession}.`
+}
 
+const object = {
+    firstName: "Esther",
+    lastName: "Henning",
+    profession: "Logopedistisch onderzoeker",
+}
+
+const sentence = createDetailString(object);
+console.log(sentence);
+
+//Manier 2: arrow-function
+
+const createString = (object) => `${object.name} is ${object.job}.`;
+
+console.log(createString({ name: "Job", surName: "Snijders", job: "BGP & RPKI operator at @fastly, vice president at @peeringdb, hacker at @openbsd"}));
